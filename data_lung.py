@@ -69,7 +69,14 @@ for i in range(len(img_test)):
     test_mask[count] = msk
     
     count = count + 1   
-    
+
+
+train_image = np.expand_dims(train_image,3) 
+train_mask = np.expand_dims(train_mask,3)
+test_image = np.expand_dims(test_image,3)
+test_mask = np.expand_dims(test_mask,3)
+print(train_image.shape)
+   
 np.save('train_image_lung.npy', train_image)  
 np.save('train_mask_lung.npy', train_mask) 
 np.save('test_image_lung.npy', test_image) 
